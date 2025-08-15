@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>View Information</h1>
+    </header>
+    <div class="container">
+        <h2>Staff Information</h2>
+        {% if staff_info %}
+            <p>Name: {{ staff_info.name }}</p>
+            <p>Designation: {{ staff_info.designation }}</p>
+            <p>Department: {{ staff_info.department }}</p>
+            <p>Qualification: {{ staff_info.qualification }}</p>
+            <p>Date of Birth: {{ staff_info.dob }}</p>
+            <p>Age: {{ staff_info.age }}</p>
+            <p>Gender: {{ staff_info.gender }}</p>
+            <p>Mother Tongue: {{ staff_info.mother_tongue }}</p>
+            <p>Mobile Number: {{ staff_info.mobile }}</p>
+            <p>Alternate Mobile Number: {{ staff_info.alternate_mobile }}</p>
+            <p>Personal Email: {{ staff_info.personal_email }}</p>
+            <p>College Email: {{ staff_info.college_email }}</p>
+            <p>Nationality: {{ staff_info.nationality }}</p>
+            <p>Religion: {{ staff_info.religion }}</p>
+            <p>Community: {{ staff_info.community }}</p>
+            <p>Caste: {{ staff_info.caste }}</p>
+            <p>Salary: {{ staff_info.salary }}</p>
+            <p>Experience: {{ staff_info.experience }}</p>
+            <p>Date of Joining (Designation): {{ staff_info.doj_designation }}</p>
+            <p>Date of Joining (Institution): {{ staff_info.doj_institution }}</p>
+            <p>Blood Group: {{ staff_info.blood_group }}</p>
+            <p>Aadhar Number: {{ staff_info.aadhar }}</p>
+            <p>Address for Communication: {{ staff_info.address_comm }}</p>
+            <p>Permanent Address: {{ staff_info.address_perm }}</p>
+            <p>Degree: {{ staff_info.degree }}</p>
+            <p>Specialization: {{ staff_info.specialization }}</p>
+            <p>College Name: {{ staff_info.college_name }}</p>
+            <p>University: {{ staff_info.university }}</p>
+            <p>Year of Passing: {{ staff_info.year_of_passing }}</p>
+            <p>Percentage: {{ staff_info.percentage }}</p>
+            <p>PAN Card Number: {{ staff_info.pan_card }}</p>
+            <p>Bank Account Number: {{ staff_info.bank_account }}</p>
+            <p>Bank Name: {{ staff_info.bank_name }}</p>
+            <p>Branch Name: {{ staff_info.branch_name }}</p>
+            <p>IFSC Code: {{ staff_info.ifsc }}</p>
+        {% else %}
+            <p>No staff information found.</p>
+        {% endif %}
+        
+        <h2>Family Information</h2>
+        {% if family_info %}
+            <p>Father's Name: {{ family_info.father_name }}</p>
+            <p>Father's Occupation: {{ family_info.father_occupation }}</p>
+            <p>Mother's Name: {{ family_info.mother_name }}</p>
+            <p>Mother's Occupation: {{ family_info.mother_occupation }}</p>
+            <p>Spouse's Name: {{ family_info.spouse_name }}</p>
+            <p>Spouse's Phone Number: {{ family_info.spouse_phone_number }}</p>
+        {% else %}
+            <p>No family information found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Information</title>
+    <style>
+        /* Reset some default styling */
+body, h1, label, input, button, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling for body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Center the form on the page */
+form {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style form headers */
+h1 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style each form section */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Style input fields */
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+/* Style buttons */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Style links */
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Family Information</h1>
+    <form action="{{ url_for('family_information') }}" method="POST">
+        <label for="father_name">Father's Name:</label>
+        <input type="text" name="father_name" value="{{ family_info.father_name if family_info else '' }}"><br>
+        <label for="father_occupation">Father's Occupation:</label>
+        <input type="text" name="father_occupation" value="{{ family_info.father_occupation if family_info else '' }}"><br>
+        <label for="mother_name">Mother's Name:</label>
+        <input type="text" name="mother_name" value="{{ family_info.mother_name if family_info else '' }}"><br>
+        <label for="mother_occupation">Mother's Occupation:</label>
+        <input type="text" name="mother_occupation" value="{{ family_info.mother_occupation if family_info else '' }}"><br>
+        <label for="spouse_name">Spouse's Name:</label>
+        <input type="text" name="spouse_name" value="{{ family_info.spouse_name if family_info else '' }}"><br>
+        <label for="spouse_phone_number">Spouse's Phone Number:</label>
+        <input type="text" name="spouse_phone_number" value="{{ family_info.spouse_phone_number if family_info else '' }}"><br>
+        <button type="submit">Save</button>
+    </form>
+    <a href="{{ url_for('user_dashboard') }}">Back to Dashboard</a>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Information</title>
+    <style>
+        /* Reset some default styling */
+body, h1, div, input, label, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling for body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Center the form on the page */
+form {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style form headers */
+h1 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style each form section */
+div {
+    margin-bottom: 15px;
+}
+
+/* Style labels */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Style input fields */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Style file inputs */
+input[type="file"] {
+    border: none;
+    padding: 0;
+    background: #f9f9f9;
+}
+
+/* Style buttons */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Style links */
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Staff Information</h1>
+    <form method="POST">
+        <div>
+            <label>Name of the Faculty:</label>
+            <input type="text" name="name" value="{{ staff_info.name if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Designation:</label>
+            <input type="text" name="designation" value="{{ staff_info.designation if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Department:</label>
+            <input type="text" name="department" value="{{ staff_info.department if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Qualification:</label>
+            <input type="text" name="qualification" value="{{ staff_info.qualification if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Date of Birth:</label>
+            <input type="date" name="dob" value="{{ staff_info.dob if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Age:</label>
+            <input type="number" name="age" value="{{ staff_info.age if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Gender:</label>
+            <input type="text" name="gender" value="{{ staff_info.gender if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Mother Tongue:</label>
+            <input type="text" name="mother_tongue" value="{{ staff_info.mother_tongue if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Mobile Number:</label>
+            <input type="tel" name="mobile" value="{{ staff_info.mobile if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Alternate Mobile Number:</label>
+            <input type="tel" name="alternate_mobile" value="{{ staff_info.alternate_mobile if staff_info else '' }}">
+        </div>
+        <div>
+            <label>Personal Email:</label>
+            <input type="email" name="personal_email" value="{{ staff_info.personal_email if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>College Email:</label>
+            <input type="email" name="college_email" value="{{ staff_info.college_email if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Nationality:</label>
+            <input type="text" name="nationality" value="{{ staff_info.nationality if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Religion:</label>
+            <input type="text" name="religion" value="{{ staff_info.religion if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Community:</label>
+            <input type="text" name="community" value="{{ staff_info.community if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Caste:</label>
+            <input type="text" name="caste" value="{{ staff_info.caste if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Salary:</label>
+            <input type="number" name="salary" value="{{ staff_info.salary if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Experience (YY.MM):</label>
+            <input type="text" name="experience" value="{{ staff_info.experience if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Date of Joining (Designation):</label>
+            <input type="date" name="doj_designation" value="{{ staff_info.doj_designation if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Date of Joining (Institution):</label>
+            <input type="date" name="doj_institution" value="{{ staff_info.doj_institution if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Blood Group:</label>
+            <input type="text" name="blood_group" value="{{ staff_info.blood_group if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Aadhar Number:</label>
+            <input type="text" name="aadhar" value="{{ staff_info.aadhar if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Voter ID:</label>
+            <input type="file" name="voter_id">
+        </div>
+        <div>
+            <label>Driving License:</label>
+            <input type="file" name="driving_license">
+        </div>
+        <div>
+            <label>Address for Communication:</label>
+            <input type="text" name="address_comm" value="{{ staff_info.address_comm if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Permanent Address:</label>
+            <input type="text" name="address_perm" value="{{ staff_info.address_perm if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Degree:</label>
+            <input type="text" name="degree" value="{{ staff_info.degree if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Specialization:</label>
+            <input type="text" name="specialization" value="{{ staff_info.specialization if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Name of the College:</label>
+            <input type="text" name="college_name" value="{{ staff_info.college_name if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>University:</label>
+            <input type="text" name="university" value="{{ staff_info.university if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Year of Passing:</label>
+            <input type="text" name="year_of_passing" value="{{ staff_info.year_of_passing if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Percentage/CGPA:</label>
+            <input type="text" name="percentage" value="{{ staff_info.percentage if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>PAN Card Number:</label>
+            <input type="text" name="pan_card" value="{{ staff_info.pan_card if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Bank Account Number:</label>
+            <input type="text" name="bank_account" value="{{ staff_info.bank_account if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Bank Name:</label>
+            <input type="text" name="bank_name" value="{{ staff_info.bank_name if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Branch Name:</label>
+            <input type="text" name="branch_name" value="{{ staff_info.branch_name if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>IFSC Code:</label>
+            <input type="text" name="ifsc" value="{{ staff_info.ifsc if staff_info else '' }}" required>
+        </div>
+        <div>
+            <label>Faculty Signature:</label>
+            <input type="file" name="signature">
+        </div>
+        <div>
+            <button type="submit">Save</button>
+            <a href="{{ url_for('user_dashboard') }}">Back</a>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>User Dashboard</h1>
+    <ul>
+        <li><a href="{{ url_for('staff_information') }}">Staff Information</a></li>
+        <li><a href="{{ url_for('family_information') }}">Family Information</a></li>
+        <li><a href="{{ url_for('view_information') }}">View Information</a></li>
+    </ul>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
